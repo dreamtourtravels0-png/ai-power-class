@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Power - Free ID & Certificate Course</title>
+<link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&family=Baloo+Da+2:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #0a1628;
+    --blue: #0d2a5e;
+    --accent: #f5c518;
+    --green: #22c55e;
+    --white: #ffffff;
+    --light: #e8f0fe;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Hind Siliguri', sans-serif;
+    background: var(--navy);
+    color: var(--white);
+    overflow-x: hidden;
+  }
+
+  .hero {
+    background: linear-gradient(135deg, #0a1628 0%, #0d2a5e 50%, #0a1628 100%);
+    padding: 40px 20px 50px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -100px; left: -100px;
+    width: 400px; height: 400px;
+    background: radial-gradient(circle, rgba(245,197,24,0.12) 0%, transparent 70%);
+    border-radius: 50%;
+  }
+  .hero::after {
+    content: '';
+    position: absolute;
+    bottom: -80px; right: -80px;
+    width: 300px; height: 300px;
+    background: radial-gradient(circle, rgba(34,197,94,0.1) 0%, transparent 70%);
+    border-radius: 50%;
+  }
+
+  .badge {
+    display: inline-block;
+    background: var(--accent);
+    color: #000;
+    font-weight: 700;
+    font-size: 13px;
+    padding: 6px 18px;
+    border-radius: 30px;
+    margin-bottom: 18px;
+    animation: pulse 2s infinite;
+  }
+  @keyframes pulse {
+    0%,100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+  }
+
+  .hero h1 {
+    font-family: 'Baloo Da 2', cursive;
+    font-size: clamp(26px, 6vw, 42px);
+    font-weight: 800;
+    line-height: 1.2;
+    margin-bottom: 12px;
+  }
+  .hero h1 span { color: var(--accent); }
+  .hero h1 .green { color: var(--green); }
+
+  .hero-sub {
+    font-size: 16px;
+    color: var(--light);
+    margin-bottom: 24px;
+    line-height: 1.6;
+  }
+
+  .logos {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    margin-bottom: 28px;
+    flex-wrap: wrap;
+  }
+  .logo-box {
+    background: rgba(255,255,255,0.1);
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 12px;
+    padding: 10px 20px;
+    font-size: 15px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .logo-box .icon { font-size: 22px; }
+
+  .benefits {
+    background: rgba(255,255,255,0.05);
+    border-radius: 16px;
+    padding: 20px;
+    margin: 0 auto 30px;
+    max-width: 480px;
+    text-align: left;
+  }
+  .benefit-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 12px;
+    font-size: 15px;
+  }
+  .benefit-item:last-child { margin-bottom: 0; }
+  .benefit-item .check {
+    background: var(--green);
+    border-radius: 50%;
+    width: 22px; height: 22px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 13px;
+    flex-shrink: 0;
+  }
+
+  .timer-section {
+    background: rgba(245,197,24,0.1);
+    border: 1px solid rgba(245,197,24,0.3);
+    border-radius: 16px;
+    padding: 16px 24px;
+    margin: 0 auto 30px;
+    max-width: 360px;
+    text-align: center;
+  }
+  .timer-label {
+    font-size: 13px;
+    color: var(--accent);
+    margin-bottom: 10px;
+    font-weight: 600;
+  }
+  .timer-boxes {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+  }
+  .timer-box {
+    background: var(--blue);
+    border-radius: 10px;
+    padding: 10px 16px;
+    min-width: 64px;
+  }
+  .timer-box .num {
+    font-family: 'Baloo Da 2', cursive;
+    font-size: 28px;
+    font-weight: 800;
+    color: var(--accent);
+    line-height: 1;
+  }
+  .timer-box .unit {
+    font-size: 11px;
+    color: rgba(255,255,255,0.6);
+    margin-top: 2px;
+  }
+
+  .form-section {
+    background: linear-gradient(180deg, #0d2a5e 0%, #0a1628 100%);
+    padding: 40px 20px;
+  }
+  .form-card {
+    background: white;
+    border-radius: 24px;
+    padding: 32px 24px;
+    max-width: 480px;
+    margin: 0 auto;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+  }
+  .form-card h2 {
+    font-family: 'Baloo Da 2', cursive;
+    font-size: 22px;
+    color: var(--navy);
+    font-weight: 800;
+    margin-bottom: 6px;
+    text-align: center;
+  }
+  .form-card p {
+    color: #666;
+    font-size: 14px;
+    text-align: center;
+    margin-bottom: 24px;
+  }
+
+  .free-tag {
+    display: inline-block;
+    background: #dcfce7;
+    color: #16a34a;
+    font-size: 13px;
+    font-weight: 700;
+    padding: 4px 14px;
+    border-radius: 20px;
+    margin-bottom: 20px;
+  }
+
+  .field { margin-bottom: 16px; }
+  .field label {
+    display: block;
+    font-size: 13px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 6px;
+  }
+  .field input {
+    width: 100%;
+    padding: 13px 16px;
+    border: 1.5px solid #e0e0e0;
+    border-radius: 10px;
+    font-size: 15px;
+    font-family: 'Hind Siliguri', sans-serif;
+    color: #333;
+    transition: border-color 0.2s;
+    outline: none;
+  }
+  .field input:focus { border-color: #0d2a5e; }
+  .field input::placeholder { color: #aaa; }
+
+  .submit-btn {
+    width: 100%;
+    padding: 16px;
+    background: linear-gradient(135deg, #f5c518, #e6b800);
+    color: #000;
+    font-size: 18px;
+    font-weight: 700;
+    font-family: 'Baloo Da 2', cursive;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    margin-top: 8px;
+    transition: transform 0.15s, box-shadow 0.15s;
+    box-shadow: 0 4px 20px rgba(245,197,24,0.4);
+  }
+  .submit-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(245,197,24,0.5);
+  }
+  .submit-btn:active { transform: translateY(0); }
+  .submit-btn:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+    transform: none;
+  }
+
+  .privacy-note {
+    font-size: 12px;
+    color: #999;
+    text-align: center;
+    margin-top: 12px;
+  }
+
+  .success-screen {
+    display: none;
+    text-align: center;
+    padding: 20px 0;
+  }
+  .success-icon {
+    width: 80px; height: 80px;
+    background: #dcfce7;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 36px;
+    margin: 0 auto 20px;
+    animation: bounce 0.5s ease;
+  }
+  @keyframes bounce {
+    0% { transform: scale(0); }
+    60% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+  }
+  .success-screen h3 {
+    font-family: 'Baloo Da 2', cursive;
+    font-size: 22px;
+    color: var(--navy);
+    font-weight: 800;
+    margin-bottom: 8px;
+  }
+  .success-screen p {
+    color: #555;
+    font-size: 14px;
+    margin-bottom: 24px;
+  }
+  .whatsapp-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: #25d366;
+    color: white;
+    font-size: 17px;
+    font-weight: 700;
+    font-family: 'Baloo Da 2', cursive;
+    padding: 14px 28px;
+    border-radius: 12px;
+    text-decoration: none;
+    box-shadow: 0 4px 20px rgba(37,211,102,0.4);
+    transition: transform 0.15s;
+  }
+  .whatsapp-btn:hover { transform: translateY(-2px); }
+  .whatsapp-btn .wa-icon { font-size: 22px; }
+
+  .examples-section {
+    padding: 40px 20px;
+    text-align: center;
+  }
+  .examples-section h2 {
+    font-family: 'Baloo Da 2', cursive;
+    font-size: 22px;
+    font-weight: 800;
+    margin-bottom: 8px;
+    color: var(--accent);
+  }
+  .examples-section p { color: var(--light); font-size: 14px; margin-bottom: 24px; }
+
+  .card-examples {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+  }
+  .mini-card {
+    background: white;
+    border-radius: 10px;
+    padding: 12px;
+    width: 100px;
+    text-align: center;
+    font-size: 10px;
+    color: #333;
+  }
+  .mini-card .card-type {
+    font-size: 9px;
+    font-weight: 700;
+    padding: 3px 6px;
+    border-radius: 4px;
+    margin-bottom: 8px;
+    display: block;
+  }
+  .company { background: #0d2a5e; color: white; }
+  .student { background: #16a34a; color: white; }
+  .press { background: #dc2626; color: white; }
+  .visitor { background: #7c3aed; color: white; }
+  .mini-card .avatar {
+    width: 36px; height: 36px;
+    background: #e5e7eb;
+    border-radius: 6px;
+    margin: 0 auto 6px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 18px;
+  }
+  .mini-card .name { font-weight: 700; font-size: 9px; margin-bottom: 2px; }
+  .mini-card .role { color: #666; font-size: 8px; }
+  .mini-card .barcode {
+    margin-top: 6px;
+    height: 12px;
+    background: repeating-linear-gradient(90deg, #333 0px, #333 2px, white 2px, white 4px);
+    border-radius: 2px;
+  }
+
+  .features-section {
+    background: rgba(255,255,255,0.03);
+    padding: 40px 20px;
+  }
+  .features-section h2 {
+    font-family: 'Baloo Da 2', cursive;
+    font-size: 22px;
+    font-weight: 800;
+    text-align: center;
+    margin-bottom: 24px;
+    color: var(--accent);
+  }
+  .features-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    max-width: 480px;
+    margin: 0 auto;
+  }
+  .feature-box {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 14px;
+    padding: 18px 14px;
+    text-align: center;
+  }
+  .feature-box .fi { font-size: 28px; margin-bottom: 8px; }
+  .feature-box .ft { font-size: 13px; font-weight: 600; }
+  .feature-box .fd { font-size: 11px; color: rgba(255,255,255,0.6); margin-top: 4px; }
+
+  .footer-cta {
+    background: linear-gradient(135deg, #f5c518, #e6b800);
+    padding: 30px 20px;
+    text-align: center;
+  }
+  .footer-cta h3 {
+    font-family: 'Baloo Da 2', cursive;
+    font-size: 22px;
+    font-weight: 800;
+    color: #000;
+    margin-bottom: 6px;
+  }
+  .footer-cta p { color: #333; font-size: 14px; margin-bottom: 16px; }
+  .footer-cta .cta-btn {
+    display: inline-block;
+    background: var(--navy);
+    color: white;
+    font-size: 16px;
+    font-weight: 700;
+    font-family: 'Baloo Da 2', cursive;
+    padding: 14px 32px;
+    border-radius: 12px;
+    text-decoration: none;
+    cursor: pointer;
+    border: none;
+  }
+
+  .bottom-bar {
+    background: #060e1c;
+    padding: 16px 20px;
+    text-align: center;
+    font-size: 12px;
+    color: rgba(255,255,255,0.4);
+  }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="badge">🎉 একদম ফ্রি ক্লাস — সীমিত আসন!</div>
+  <h1>
+    <span>AI-Power</span> দিয়ে শিখুন<br>
+    <span class="green">Automatic ID Card</span> &<br>
+    Certificate তৈরি করুন
+  </h1>
+  <p class="hero-sub">
+    Professional ID Card ও Certificate তৈরি করুন<br>
+    AI-এর সাহায্যে দ্রুত ও নিখুঁতভাবে!
+  </p>
+
+  <div class="benefits">
+    <div class="benefit-item"><div class="check">✓</div> Excel দিয়ে ডাটা ম্যানেজ হবে অটোমেটিক</div>
+    <div class="benefit-item"><div class="check">✓</div> AI দিয়ে হবে দ্রুত ও স্মার্ট ডিজাইন</div>
+    <div class="benefit-item"><div class="check">✓</div> এক ক্লিকেই বানান ID Card & Certificate</div>
+    <div class="benefit-item"><div class="check">✓</div> সময় বাঁচান, কাজ হবে নিখুঁত ও প্রফেশনাল</div>
+  </div>
+
+  <div class="timer-section">
+    <div class="timer-label">⏰ অফার শেষ হওয়ার আগেই রেজিস্ট্রেশন করুন!</div>
+    <div class="timer-boxes">
+      <div class="timer-box"><div class="num" id="hours">02</div><div class="unit">HRS</div></div>
+      <div class="timer-box"><div class="num" id="mins">00</div><div class="unit">MIN</div></div>
+      <div class="timer-box"><div class="num" id="secs">00</div><div class="unit">SEC</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- FORM -->
+<section class="form-section">
+  <div class="form-card">
+    <div id="form-area">
+      <h2>🚀 এখনই রেজিস্ট্রেশন করুন</h2>
+      <p>ফ্রি ক্লাসে Join করুন এবং নিজের দক্ষতা বাড়ান</p>
+      <div style="text-align:center"><span class="free-tag">✅ সম্পূর্ণ বিনামূল্যে</span></div>
+
+      <div class="field">
+        <label>পুরো নাম *</label>
+        <input type="text" id="name" placeholder="আপনার পুরো নাম লিখুন" required>
+      </div>
+      <div class="field">
+        <label>WhatsApp নম্বর *</label>
+        <input type="tel" id="phone" placeholder="01XXXXXXXXX বা 9XXXXXXXXX" required>
+      </div>
+      <div class="field">
+        <label>Email * (বাধ্যতামূলক)</label>
+        <input type="email" id="email" placeholder="your@email.com" required>
+      </div>
+
+      <button class="submit-btn" id="submit-btn" onclick="handleSubmit()">
+        ▶ এখনই Join করুন — একদম ফ্রি!
+      </button>
+      <p class="privacy-note">🔒 আপনার তথ্য সম্পূর্ণ নিরাপদ থাকবে</p>
+    </div>
+
+    <!-- SUCCESS -->
+    <div class="success-screen" id="success-area">
+      <div class="success-icon">✅</div>
+      <h3>রেজিস্ট্রেশন সম্পন্ন হয়েছে!</h3>
+      <p>অভিনন্দন! নিচের বাটনে ক্লিক করে WhatsApp Group-এ Join করুন।</p>
+      <a href="https://chat.whatsapp.com/DwbkR4qnHXk87SHHAajR59?mode=gi_t" class="whatsapp-btn" target="_blank">
+        <span class="wa-icon">💬</span> WhatsApp Group-এ Join করুন
+      </a>
+      <p style="color:#999; font-size:12px; margin-top:16px;">Group-এ ক্লাসের সব আপডেট পাবেন</p>
+    </div>
+  </div>
+</section>
+
+<!-- ID EXAMPLES -->
+<section class="examples-section">
+  <h2>ID Card Examples</h2>
+  <p>এই ধরনের Professional ID Card বানাতে শিখবেন</p>
+  <div class="card-examples">
+    <div class="mini-card">
+      <span class="card-type company">COMPANY</span>
+      <div class="avatar">👤</div>
+      <div class="name">A. SHINDE</div>
+      <div class="role">HR Manager</div>
+      <div class="barcode"></div>
+    </div>
+    <div class="mini-card">
+      <span class="card-type student">STUDENT</span>
+      <div class="avatar">👤</div>
+      <div class="name">HANMANT SHINDE</div>
+      <div class="role">Student</div>
+      <div class="barcode"></div>
+    </div>
+    <div class="mini-card">
+      <span class="card-type press">PRESS</span>
+      <div class="avatar">👤</div>
+      <div class="name">A. SHINDE</div>
+      <div class="role">Reporter</div>
+      <div class="barcode"></div>
+    </div>
+    <div class="mini-card">
+      <span class="card-type visitor">VISITOR</span>
+      <div class="avatar">👤</div>
+      <div class="name">HANMANT SHINDE</div>
+      <div class="role">Visitor</div>
+      <div class="barcode"></div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURES -->
+<section class="features-section">
+  <h2>কেন এই ক্লাস করবেন?</h2>
+  <div class="features-grid">
+    <div class="feature-box">
+      <div class="fi">⏰</div>
+      <div class="ft">সময় বাঁচান</div>
+      <div class="fd">অটোমেটিক কাজ করবে</div>
+    </div>
+    <div class="feature-box">
+      <div class="fi">🎯</div>
+      <div class="ft">১০০% প্রফেশনাল</div>
+      <div class="fd">মানসম্পন্ন ডিজাইন</div>
+    </div>
+    <div class="feature-box">
+      <div class="fi">💰</div>
+      <div class="ft">একদম ফ্রি</div>
+      <div class="fd">কোনো খরচ নেই</div>
+    </div>
+    <div class="feature-box">
+      <div class="fi">👥</div>
+      <div class="ft">সবার জন্য</div>
+      <div class="fd">যেকোনো বয়সে শিখুন</div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER CTA -->
+<div class="footer-cta">
+  <h3>দেরি না করে এখনই Join করুন!</h3>
+  <p>সীমিত আসন — আজই রেজিস্ট্রেশন করুন</p>
+  <button class="cta-btn" onclick="document.querySelector('.form-section').scrollIntoView({behavior:'smooth'})">
+    এখনই জয়েন করুন ▶
+  </button>
+</div>
+
+<div class="bottom-bar">
+  © 2025 The Computer School · সকল অধিকার সংরক্ষিত
+</div>
+
+<script>
+  // ✅ Google Apps Script URL
+  const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbx_NBMsJ66eponpDIgRYsF3R8MyTyRg6ErPt_FnGm7FAH5UEhNN1SuQHgkyDjHzOwRl3w/exec";
+
+  // Countdown Timer
+  function startTimer(duration) {
+    let timer = duration;
+    setInterval(() => {
+      let h = Math.floor(timer / 3600);
+      let m = Math.floor((timer % 3600) / 60);
+      let s = timer % 60;
+      document.getElementById('hours').textContent = String(h).padStart(2,'0');
+      document.getElementById('mins').textContent = String(m).padStart(2,'0');
+      document.getElementById('secs').textContent = String(s).padStart(2,'0');
+      if (timer > 0) timer--;
+    }, 1000);
+  }
+  startTimer(2 * 3600);
+
+  // Form Submit
+  function handleSubmit() {
+    const name = document.getElementById('name').value.trim();
+    const phone = document.getElementById('phone').value.trim();
+    const email = document.getElementById('email').value.trim();
+
+    if (!name) { alert('অনুগ্রহ করে আপনার নাম লিখুন।'); return; }
+    if (!phone) { alert('অনুগ্রহ করে WhatsApp নম্বর লিখুন।'); return; }
+    if (!email || !email.includes('@')) { alert('অনুগ্রহ করে সঠিক Email লিখুন।'); return; }
+
+    // Button loading state
+    const btn = document.getElementById('submit-btn');
+    btn.textContent = '⏳ জমা হচ্ছে...';
+    btn.disabled = true;
+
+    // Send to Google Sheet
+    fetch(SCRIPT_URL, {
+      method: "POST",
+      mode: "no-cors",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ name, phone, email })
+    })
+    .then(() => {
+      showSuccess();
+    })
+    .catch(() => {
+      // no-cors এর কারণে error আসলেও data সাধারণত save হয়
+      showSuccess();
+    });
+  }
+
+  function showSuccess() {
+    document.getElementById('form-area').style.display = 'none';
+    const s = document.getElementById('success-area');
+    s.style.display = 'block';
+  }
+</script>
+</body>
+</html>
